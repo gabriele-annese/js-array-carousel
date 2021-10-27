@@ -42,6 +42,8 @@ const textCollection = [
 
 const images = document.querySelector(".images");
 const thumbs = document.querySelector(".thumbs");
+const next = document.querySelector(".next");
+const prev = document.querySelector(".prev");
 
 for(let i = 0; i <  titleCollection.length; i++){
     // immagine grande
@@ -64,3 +66,6 @@ for(let i = 0; i <  titleCollection.length; i++){
 // settare attivazione immagine
 let activeImg = 1;
 document.getElementsByClassName("image-container")[activeImg].classList.add("active");
+document.getElementsByClassName("thumb")[activeImg].classList.add("active");
+
+// btn next
