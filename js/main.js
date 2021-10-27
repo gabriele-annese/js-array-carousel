@@ -54,5 +54,9 @@ for(let i = 0; i <  titleCollection.length; i++){
         </div>
     </div>`;
     // immagini destra
-    
+    thumbs.innerHTML += `
+    <div class="thumb">
+         <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
+    </div>
+`;
 }
