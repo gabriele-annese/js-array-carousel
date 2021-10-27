@@ -82,6 +82,21 @@ next.addEventListener('click', function(){
     document.getElementsByClassName("image-container")[activeImg].classList.add("active");
 
     document.querySelector(".thumb.active").classList.remove("active");
+    document.getElementsByClassName("thumb")[activeImg].classList.add("active");
+
+})
+
+const prev = document.querySelector(".prev");
+prev.addEventListener ('click', function (){
+    if (activeImg == 0){
+        activeImg = titleCollection.length -1 ;
+    } else{
+        activeImg --;
+    }
+
+    document.querySelector(".image-container.active").classList.remove("active");
     document.getElementsByClassName("image-container")[activeImg].classList.add("active");
 
+    document.querySelector(".thumb.active").classList.remove("active");
+    document.getElementsByClassName("thumb")[activeImg].classList.add("active");
 })
