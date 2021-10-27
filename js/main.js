@@ -60,3 +60,7 @@ for(let i = 0; i <  titleCollection.length; i++){
     </div>
 `;
 }
+
+// settare attivazione immagine
+let activeImg = 1;
+document.getElementsByClassName("image-container")[activeImg].classList.add("active");
