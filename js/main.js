@@ -42,8 +42,8 @@ const textCollection = [
 
 const images = document.querySelector(".images");
 const thumbs = document.querySelector(".thumbs");
-const next = document.querySelector(".next");
-const prev = document.querySelector(".prev");
+
+let activeImg = 1;
 
 for(let i = 0; i <  titleCollection.length; i++){
     // immagine grande
@@ -64,8 +64,24 @@ for(let i = 0; i <  titleCollection.length; i++){
 }
 
 // settare attivazione immagine
-let activeImg = 1;
+console.log(document.getElementsByClassName("image-container") );
 document.getElementsByClassName("image-container")[activeImg].classList.add("active");
+console.log(document.getElementsByClassName("thumb") );
 document.getElementsByClassName("thumb")[activeImg].classList.add("active");
 
-// btn next
+const next = document.querySelector(".next");
+next.addEventListener('click', function(){
+    // btn next
+    if (activeImg === titleCollection.length -1){
+        activeImg = 0;
+    } else {
+        activeImg++;
+    }
+    
+    document.querySelector(".image-container.active").classList.remove("active");
+    document.getElementsByClassName("image-container")[activeImg].classList.add("active");
+
+    document.querySelector(".thumb.active").classList.remove("active");
+    document.getElementsByClassName("image-container")[activeImg].classList.add("active");
+
+})
